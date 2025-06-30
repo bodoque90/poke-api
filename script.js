@@ -23,7 +23,23 @@ function mostrarPokemon(data) {
 
   const stats = data.stats.map(stat => {
     const nombre = traducirStat(stat.stat.name);
-    return `<p><strong>${nombre}:</strong> ${stat.base_stat}</p>`;
+    const valor = stat.base_stat;
+    const maxStat = 200;
+    const porcentaje = Math.min((valor / maxStat) * 100, 100);
+
+    return `
+      <div class="stat-label"><strong>${nombre}:</strong> ${valor}</div>
+      <div class="stat-bar-container">
+        <div class="stat-bar" style="width: ${porcentaje}%; background: ${
+          stat.stat.name === 'hp' ? '#ff5959' :
+          stat.stat.name === 'attack' ? '#f5ac78' :
+          stat.stat.name === 'defense' ? '#fae078' :
+          stat.stat.name === 'special-attack' ? '#9db7f5' :
+          stat.stat.name === 'special-defense' ? '#a7db8d' :
+          stat.stat.name === 'speed' ? '#fa92b2' : '#30a7d7'
+        }">${valor}</div>
+      </div>
+    `;
   }).join('');
 
   container.innerHTML = `
@@ -65,3 +81,35 @@ function traducirStat(statName) {
   };
   return traducciones[statName] || statName;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
