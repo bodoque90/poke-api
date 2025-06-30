@@ -3,51 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <title>PokeAPI con JS</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body class="min-vh-100 d-flex flex-column" style="background: #fff8e1;">
 
-    <!-- Bootstrap CSS -->
-   
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-
-  </head>
-<body>
-   <header class="pokemon-header text-center">
-        <div class="container">
-            <h1 class="pokemon-title">Enciclopedia Pokémon</h1>
-            <h2 class="pokemon-subtitle">POKÉDEX</h2>
-        </div>
-    </header>
-
-  
-  <h1>Busca tu Pokémon</h1>
-  <div class="search-container">
-    <input type="text" id="pokemonInput" placeholder="Ej: pikachu o 25">
-    <button onclick="buscarPokemon()">Buscar</button>
-  </div>
-  <div id="pokemonContainer">  
-  </div>
-
-  <div class="nav-buttons">
-  <button onclick="cambiarPokemon(-1)">Anterior</button>
-  <button onclick="cambiarPokemon(1)">Siguiente</button>
-  <button onclick="pokemonAleatorio()">Aleatorio</button>
+  <!-- Header Rojo Pokémon -->
+  <header class="text-white text-center py-4 mb-3" style="background: #e3350d;">
+    <div class="container">
+      <h1 class="pokemon-title mb-1" style="font-family:'Press Start 2P', monospace;">Enciclopedia Pokémon</h1>
+      <h2 class="pokemon-subtitle" style="font-family:'Rubik',sans-serif; color: #ffd600;">POKÉDEX</h2>
     </div>
+  </header>
 
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-        <div class="container">
-            <p class="mb-0">© 2023 Pokédex | Todos los derechos reservados</p>
+  <main class="flex-grow-1">
+    <div class="container">
+
+      <!-- Card de búsqueda (borde rojo, sombra amarilla) -->
+      <div class="card mx-auto mb-4 shadow" style="max-width: 450px; border: 2.5px solid #e3350d; box-shadow: 0 2px 24px 0 #ffd60050;">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-3" style="font-family:'Press Start 2P',monospace; font-size:1.1rem; color: #e3350d;">
+            Busca tu Pokémon
+          </h3>
+          <div class="input-group mb-3">
+            <input type="text" id="pokemonInput" class="form-control" placeholder="Ej: pikachu o 25" style="border: 1.5px solid #e3350d;">
+            <button class="btn" style="background: #ffd600; color: #e3350d; font-weight:bold;" onclick="buscarPokemon()">
+              <i class="fa-solid fa-magnifying-glass"></i> Buscar
+            </button>
+          </div>
+          <div id="pokemonContainer"></div>
         </div>
-    </footer>
+      </div>
+      <!-- Navegación -->
+      <div class="d-flex justify-content-center gap-2 mb-4">
+        <button class="btn" style="background: #ffd600; color: #e3350d; font-weight:bold;" onclick="cambiarPokemon(-1)">Anterior</button>
+        <button class="btn" style="background: #ffd600; color: #e3350d; font-weight:bold;" onclick="cambiarPokemon(1)">Siguiente</button>
+        <button class="btn" style="background: #e3350d; color: #fff; font-weight:bold;" onclick="pokemonAleatorio()">Aleatorio</button>
+      </div>
+    </div>
+  </main>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Footer con fondo rojo -->
+  <footer class="text-white text-center py-4 mt-auto" style="background: #e3350d;">
+    <div class="container">
+      <p class="mb-0">© 2025 Pokédex | Todos los derechos reservados</p>
+    </div>
+  </footer>
 
-    
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
-</html> 
+</html>

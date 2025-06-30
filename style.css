@@ -168,4 +168,13 @@ footer {
     text-align: center;
     margin: 1rem 0 0 0;
   }
+  footer {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: #222;
+  color: #fff;
+  padding: 16px 0;
+  text-align: center;
+  z-index: 100;
+}
 }
