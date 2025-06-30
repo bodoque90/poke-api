@@ -11,51 +11,32 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-      <!-- Google Fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
   </head>
 <body>
-
- <header class="pokemon-header text-center">
-    <div class="container">
-        <h1 class="pokemon-title">POKEDEX</h1>
-        
-    </div>
-</header>
-<main class="container">
-    <div class="search-card">
-        <div class="search-header">
-            <i class="fas fa-search me-2"></i> BUSCA TU POKÉMON
+   <header class="pokemon-header text-center">
+        <div class="container">
+            <h1 class="pokemon-title">Enciclopedia Pokémon</h1>
+            <h2 class="pokemon-subtitle">POKÉDEX</h2>
         </div>
-        <div class="search-body">
-            <form id="formBuscar" class="mb-3">
-                <div class="mb-3">
-                    <label for="inputNombre" class="form-label fw-bold">Nombre del Pokémon</label>
-                    <input type="text" id="inputNombre" name="nombre" placeholder="Ejemplo: Pikachu" 
-                        class="form-control form-control-lg" />
-                </div>
-                <div class="d-flex justify-content-between">
-                    <button type="submit" id="btnBuscar" class="btn btn-pokemon">
-                        <i class="fas fa-search me-2"></i> Buscar
-                    </button>
-                    <button type="button" id="btnCargar" class="btn btn-secondary">
-                        <i class="fas fa-download me-2"></i> Cargar 10 Pokémon
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-        <div id="listaPokemones" class="pokemon-list"></div>
-          <div id="listaPokemones" class="pokemon-list"></div>
-              <div id="detallePokemon" class="pokemon-detail"></div>
-</main>
-
-
-
+    </header>
 
   
+  <h1>Busca tu Pokémon</h1>
+  <div class="search-container">
+    <input type="text" id="pokemonInput" placeholder="Ej: pikachu o 25">
+    <button onclick="buscarPokemon()">Buscar</button>
+  </div>
+  <div id="pokemonContainer">  
+  </div>
+
+  <div class="nav-buttons">
+  <button onclick="cambiarPokemon(-1)">Anterior</button>
+  <button onclick="cambiarPokemon(1)">Siguiente</button>
+  <button onclick="pokemonAleatorio()">Aleatorio</button>
+    </div>
 
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
@@ -63,13 +44,10 @@
         </div>
     </footer>
 
-      <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     
-        <script src="script.js"></script>
-    </body>
-
-
-
-  </html> 
+  <script src="script.js"></script>
+</body>
+</html> 
