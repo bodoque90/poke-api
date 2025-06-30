@@ -38,3 +38,25 @@ body {
   margin-bottom: 2px;
   font-size: 14px;
 }
+
+
+:root {
+            --pokemon-red: #FF0000;
+            --pokemon-blue: #3B4CCA;
+            --pokemon-yellow: #FFDE00;
+        }
+        
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .pokemon-header {
+            background: linear-gradient(135deg, var(--pokemon-red) 0%, var(--pokemon-blue) 100%);
+            color: var(--pokemon-yellow);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-bottom: 5px solid var(--pokemon-yellow);
+        }
