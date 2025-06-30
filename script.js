@@ -86,6 +86,23 @@ function traducirStat(statName) {
 
 
 
+function pokemonAleatorio(){
+  const randomId = Math.floor(Math.random() * 1025) + 1; 
+  fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
+    .then(response => {
+      if (!response.ok) throw new Error("Error al obtener Pokémon aleatorio");
+      return response.json();
+    })
+    .then(data => {
+      currentPokemonId = data.id; 
+      mostrarPokemon(data);
+    })
+    .catch(error => {
+      const container = document.getElementById('pokemonContainer');
+      container.innerHTML = '<p>Error al cargar el Pokémon aleatorio</p>';
+    });
+}
+
 
 
 
